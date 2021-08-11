@@ -1,0 +1,114 @@
+@import '~element-ui/packages/theme-chalk/src/common/var.scss';
+
+/* Color
+-------------------------- */
+$--color-success-light-5: mix($--color-white, $--color-success, 50%) !default;
+$--color-danger-light-5: mix($--color-white, $--color-danger, 50%) !default;
+
+/* Container
+-------------------------- */
+.todo-box {
+    width: 500px;
+    @media screen and (min-width: 500px) {
+        margin: 50px auto 0;
+    }
+}
+
+.todo-input-wrapper {
+    border: 0;
+    .el-collapse-item__header, .el-collapse-item__wrap {
+        border: 0;
+    }
+}
+
+/* Todo-list
+-------------------------- */
+.todo-list {
+    .todo-item {
+        border: 1px solid $--border-color-base;
+        border-right: 0;
+        border-left: 0;
+        height: 50px;
+        line-height: 50px;
+        padding: 0 10px;
+        position: relative;
+        &:not(:last-child) {
+            border-bottom: 0;
+        }
+        &:hover {
+            background-color: $--color-info-lighter;
+        }
+
+        &:hover .todo-button {
+            opacity: 1;
+        }
+        @media screen and (max-width: 499px) {
+            .todo-button {
+                opacity: 1;
+            }
+        }
+        
+        .el-checkbox__label {
+            color: $--color-text-primary;
+            font-weight: bold;
+        }
+
+        &.complete {
+            background-color: $--color-info-light;
+            .el-checkbox__label {
+                font-weight: $--font-weight-primary;
+            }
+            .is-warning {
+                display: none;
+            }
+        }
+    }
+}
+
+/* Todo-button
+-------------------------- */
+.todo-button {
+    opacity: 0;
+    font-size: 24px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 100ms ease-out;
+}
+.todo-add-button {
+    width: 100%;
+}
+.todo-edit-button {
+    color: $--color-success-light-5;
+    right: 40px;
+    &:hover {
+        color: $--color-success;
+    }
+}
+.todo-remove-button {
+    color: $--color-danger-light-5;
+    right: 10px;
+    &:hover {
+        color: $--color-danger;
+    }
+}
+
+/* Edit & View
+-------------------------- */
+.edit-wrapper {
+    display: none;
+}
+.editing {
+    .view {
+        display: none;
+    }
+    .edit-wrapper {
+        display: block;
+    }
+    .todo-button {
+        opacity: 1;
+    }
+}
+.is-warning {
+    color: $--color-danger;
+}
