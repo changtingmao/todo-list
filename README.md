@@ -2,6 +2,9 @@
 
 > A Vue.js project
 
+示意畫面  
+![image](https://user-images.githubusercontent.com/8055794/129085882-b6cd9b61-bf81-4a7f-9852-bfb057eed393.png)
+
 ## Build Setup
 
 ``` bash
